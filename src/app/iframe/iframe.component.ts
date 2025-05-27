@@ -80,7 +80,9 @@ export class IframeComponent implements AfterViewInit {
                     if(index === $table.find('th').length - 1) return; // ko thêm cho cột cuối
 
                     const $th = $(th);
+                    $th.css('position', 'relative');
                     const $handle = $('<div class="resize-handle active"></div>');
+                    $handle.height($table.outerHeight()); 
                     $th.append($handle);
 
                     let startX, startWidth;
